@@ -5,9 +5,9 @@ correct.
 """
 import random
 
-all_guesses = []    
+   
 high_score = []
-
+new_high_score = []
 
 def start_game():
     print("""
@@ -18,7 +18,7 @@ Welcome to the number guessing game!
     
     
 def guessing_numbers():
-    current_guesses = all_guesses.copy()
+    current_guesses = high_score.copy()
     key = random.randrange(0,10)
     while True:
       guess = int(input("Pick a number between 0 and 10.  "))
@@ -40,6 +40,11 @@ def guessing_numbers():
     print()
     for item in current_guesses:
       high_score.append(item)
+      
+    
+      
+
+
     
 def start_again():
     while True:
