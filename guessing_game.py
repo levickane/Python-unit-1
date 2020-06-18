@@ -16,9 +16,9 @@ Welcome to the number guessing game!
     
     
 def guessing_numbers():
-    key = random.randrange(0,20)
+    key = random.randrange(0,10)
     while True:
-      guess = int(input("Pick a number between 0 and 20.  "))
+      guess = int(input("Pick a number between 0 and 10.  "))
       all_guesses.append(guess)
       if (guess < 0) or (guess > 20):
         print("That's not within the range. Guess again")
@@ -30,18 +30,25 @@ def guessing_numbers():
         print("It's lower")
         continue
       elif guess == key:
-        break    
+        break   
+    print() 
     print("You got it!")
     print("It took you {} guesses to get it right!".format(len(all_guesses)))
+    print()
 
 
 def start_again():
+  while True:
+    print()
+    print("The HIGHSCORE is {}".format(len(all_guesses)))
+    print()
     play_again = input("Would you like to play again? Y/N  ")
-    while play_again.lower() == "y":
-      print()
-      print("The HIGHSCORE is {}".format(len(all_guesses)))
+    print()
+    if play_again.lower() == "y":
       guessing_numbers()
-    print("The game is over now.")
+    elif play_again.lower() == "n":
+      break
+  print("GAME OVER")
 
 
 
