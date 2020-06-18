@@ -13,23 +13,39 @@ def start_game():
 Welcome to the number guessing game!
 ------------------------------------
     """)
+    
+    
+def guessing_numbers():
     key = random.randrange(0,20)
     while True:
       guess = int(input("Pick a number between 0 and 20.  "))
       all_guesses.append(guess)
-      if guess < key:
+      if (guess < 0) or (guess > 20):
+        print("That's not within the range. Guess again")
+        continue
+      elif guess < key:
         print("It's higher")
         continue
       elif guess > key:
         print("It's lower")
         continue
       elif guess == key:
-        break
+        break    
     print("You got it!")
     print("It took you {} guesses to get it right!".format(len(all_guesses)))
+
+
+def start_again():
+    play_again = input("Would you like to play again? Y/N  ")
+    while play_again.lower() == "y":
+      print()
+      print("The HIGHSCORE is {}".format(len(all_guesses)))
+      guessing_numbers()
     print("The game is over now.")
 
 
 
 # Kick off the program by calling the start_game function.
 start_game()
+guessing_numbers()
+start_again()
