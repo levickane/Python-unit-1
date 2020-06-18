@@ -1,3 +1,8 @@
+"""This is a number guessing game. While True: the game will continue to prompt you to guess
+random number between 0 and 20. It will store the amount of guesses in a list and then when
+you finally guess the correct number it will tell you how many guesses it took you to get it
+correct.
+"""
 import random
 
 all_guesses = []    
