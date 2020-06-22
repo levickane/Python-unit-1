@@ -40,10 +40,9 @@ def guessing_numbers():
     print("You got it!")
     print("It took you {} guesses to get it right!".format(len(current_guesses)))
     print()
-    for guess in current_guesses:
-        if len(current_guesses) < len(high_score):
-            high_score.clear()
-            high_score.extend(current_guesses)     
+    if len(current_guesses) < len(high_score):
+        high_score.clear()
+        high_score.extend(current_guesses)     
     
       
 
